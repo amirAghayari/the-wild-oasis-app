@@ -50,8 +50,16 @@ const variations = {
 
 const Button = styled.button`
   border: none;
+  background-color: var(--color-brand-500);
+  color: var(--color-grey-50);
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.4;
+  padding: 0.8rem 1.6rem;
 
   ${(props) => sizes[props.size]}
   ${(props) => variations[props.variation]}
