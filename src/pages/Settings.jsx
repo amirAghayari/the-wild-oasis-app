@@ -4,7 +4,7 @@ import Row from "../ui/Row";
 
 function Settings() {
   return (
-    <Row type="vertical">
+    <Row>
       <Heading as="h1">Update hotel settings</Heading>
       <UpdateSettingsForm />
     </Row>

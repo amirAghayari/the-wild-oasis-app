@@ -15,9 +15,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { isEditing, editCabin } = useEditCabin();
   const isWorking = isCreating || isEditing;
 
-  // const { id: editId, ...editValues } = cabinToEdit;
-  const editId = cabinToEdit?.id?.id ?? cabinToEdit?.id;
-  const editValues = { ...cabinToEdit };
+  const { id: editId, ...editValues } = cabinToEdit;
   const isEditSession = Boolean(editId);
 
   const { register, handleSubmit, reset, getValues, formState } = useForm({
@@ -30,10 +28,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
 
     if (isEditSession)
       editCabin(
-        {
-          newCabinData: { ...data, image },
-          id: typeof editId === "object" ? editId.id : editId,
-        },
+        { newCabinData: { ...data, image }, id: editId },
         {
           onSuccess: (data) => {
             reset();
@@ -54,7 +49,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   }
 
   function onError(errors) {
-    // console.log(errors);
+    console.log(errors);
   }
 
   return (

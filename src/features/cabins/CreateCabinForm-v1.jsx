@@ -32,7 +32,7 @@ function CreateCabinForm() {
   }
 
   function onError(errors) {
-    // console.log(errors);
+    console.log(errors);
   }
 
   return (
